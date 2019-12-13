@@ -1,0 +1,420 @@
+<!doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+<!--<title>Electric Mirror</title>-->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">	
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+@media {	
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fABc4EsA.woff2) format('woff2');
+}	
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format('woff2');
+}
+}
+/* to force Roboto when desktop outlook forwards email */
+body {font-family: 'Roboto', Helvetica, Arial, sans-serif;}
+h1 {font-family: 'Roboto', Helvetica, Arial, sans-serif;}
+h2 {font-family: 'Roboto', Helvetica, Arial, sans-serif;}
+h3 {font-family: 'Roboto', Helvetica, Arial, sans-serif;}
+p {font-family: 'Roboto', Helvetica, Arial, sans-serif !important;}
+a {font-family: 'Roboto', Helvetica, Arial, sans-serif;}
+table {font-family: 'Roboto', Helvetica, Arial, sans-serif;}
+td {font-family: 'Roboto', Helvetica, Arial, sans-serif;}
+th {font-family: 'Roboto', Helvetica, Arial, sans-serif;}
+span {font-family: 'Roboto', Helvetica, Arial, sans-serif;}
+div {font-family: 'Roboto', Helvetica, Arial, sans-serif;}
+.msoNormal { font-family: 'Roboto', Helvetica, Arial, sans-serif;}
+.MsoNormal { font-family: 'Roboto', Helvetica, Arial, sans-serif;}
+.ExternalClass { font-family: 'Roboto', Helvetica, Arial, sans-serif;}
+
+/* Media query for gmail mobile email client only */
+@media screen and (max-width: 480px){           
+	h1 {
+		font-size: 15px !important;  
+		font-weight: 300;
+		line-height: 100%;
+	}
+}
+
+/* CLIENT-SPECIFIC STYLES */
+      body, table, td, a{-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+      table {border-collapse:collapse;}
+      table, td {mso-table-lspace: 0pt; mso-table-rspace: 0pt;} /* Remove spacing between tables in Outlook 2007 and up */	
+	h1 {
+		font-size: 34px ;  
+		font-weight: 300;
+		line-height: 100% ;
+		margin: 25px 15px;
+	}     
+	h2 {
+		font-size: 27px; 
+		line-height: 100%;
+		font-weight: 300;
+		margin: 15px 0;
+	} 
+	p {
+		font-weight: 300;
+	}	
+/* Some resets and issue fixes */
+	#outlook a { padding:0; }
+	body{ width:100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust:100%; margin:0; padding:0; }  
+	.ReadMsgBody {width: 100%; }
+	.ExternalClass {width:100%; line-height: 100%;} 
+	.backgroundTable {margin:0 auto; padding:0; width:100%;!important;} 
+	table td {border-collapse: collapse;}         
+/* End reset */	         
+	hr {
+		border: 0;               
+		border-radius: 30px;               
+		height: 3px;               
+		width: 550px !important;               
+		background: #333;               
+		background-image: linear-gradient(to right, #ccc, #C2C3C6, #ccc);
+	}                      
+	a {
+		font-weight: normal;               
+/*		color: #e35205;              */
+		border: 0px;              
+		text-decoration: underline;
+	} 
+	a.white {
+		color: #ffffff !important;
+	}
+	a.white:visited {
+		color: #ffffff !important;
+	}
+	a.white:hover {
+		color: #d0c9c9;
+	}
+	a.white:active {
+		color: #ffffff;
+	}
+	a img {border: none;} 
+	a#logo:hover {cursor: pointer; border: 0;}
+	sup { line-height: 0; font-size: 75%; }	
+	p {margin: 5px 0 10px;}                      
+	table {border-collapse: collapse;}                      
+	table td {border-collapse: collapse;}                                  
+	blockquote .original-only, .WordSection1 .original-only {display: none !important;}            
+	.side-padding {padding: 0 20px;}
+	.subhead {
+		font-size: 14px;
+		line-height: 125%;
+	}
+	.clear-btn {
+		border: 1px solid #343741;
+	}
+	.white-btn {
+		border:1px solid #ffffff;
+		background: transparent;
+		color: #343741;
+	}
+	.white-btn a {
+		color: #ffffff;
+	}
+	table.white-btn a:hover {
+		color: #343741 !important;
+	}
+	a.header-link {
+		color: #bbbbbb !important;
+		font-size: 10px;
+		text-transform:uppercase;
+	}
+	a.header-link:hover {
+		color: #ffffff !important;
+	}
+	.link {
+		color:#e35205;
+		text-decoration: none;
+	}
+	.footer-link {
+		color: #343741;
+		text-decoration: underline;
+		font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	}
+	.org-link {
+		color: #343741 !important;
+		text-decoration: none;
+		font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	}
+	.link:hover, .footer-link:hover {
+		text-decoration: none;
+	}
+	.border1 {
+      border-bottom: 1px solid #535762;
+  }
+	.border2 {
+      border-bottom: 1px solid #b2ada5;
+  }
+	.border3 {
+      border-bottom: 1px solid #8f3211;
+  }
+	/* hover fade */
+	.fade-slow { transition: 0.3s !important; } 
+	.fade-slow:hover { transition: 0.3s !important; opacity: 0.5 !important;}
+	/* change background colors for buttons */
+	.bg-rollover:hover {
+		background-color: #bbbbbb !important;
+		border: 0;
+}
+	.bg-rollover:visited {
+		color: #000000;
+}
+	.bg-rollover-1:hover {
+		background-color: #084863 !important;
+		border: 0;
+}
+	.bg-rollover-1:visited {
+		color: #000000;
+}	
+	.bg-rollover-2:hover {
+		background-color: #505152 !important;
+		border: 0;
+}
+	.bg-rollover-2:visited {
+		color: #000000;
+}	
+	.bg-rollover-3:hover {
+		background-color: #8b8578 !important;
+		border: 0;
+}
+	.bg-rollover-3:visited {
+		color: #000000;
+}	
+		
+	/* Media query for displaying content in mobile email clients */
+	@media screen and (max-width: 480px){           
+		body {
+			width: 100% !important;                  
+			min-width: 100% !important;
+		}  
+		h1 {
+			font-size: 20px !important;  
+			font-weight: 300;
+			line-height: 100%;
+		} 
+		#bodyCell {padding: 10px !important;}            
+		#templateContainer {
+			max-width: 600px !important;                               
+			width: 100% !important;
+		}                     
+		#templatePreheader {display:none !important;}                                                                           
+		.templateHeader {
+			border-style:none;                            
+			border-collapse: collapse;
+		}            
+		#headerImage {
+			height:auto !important;                         
+			max-width: 600px !important;                         
+			width: 100% !important;                         
+			border-collapse: collapse;
+		}            
+		.headerContent {
+			font-size:14px !important;                           
+			line-height: 125% !important;
+		}            
+		.bodyImage {
+			height:auto;                       
+			max-width: 280px;
+		}                                  
+		#templatebody {color: #505050;}            
+		.bodyContent {
+			font-size: 18px;                         
+			line-height: 115%;                         
+			border-style: none;                         
+			border-collapse: collapse;
+		}                     
+		.leftColumnContent {
+			text-align: center;                         
+			align: center;
+		}                      
+		.columnImage {
+			text-align: center;                        
+			align: center;
+		}                            
+		.footerContent {
+			font-size: 14px;                           
+			line-height: 115%;
+			font-family: 'Roboto', Helvetica, Arial, sans-serif;
+		}            
+		.footerContent a {display:block;}  
+		.subhead {
+		font-size: 16px;
+	}
+		.appleLinks a {color:#343731 !important; text-decoration: none;}
+		.appleLinksWhite a {color:#343731; text-decoration: none;}
+	}
+</style>
+
+<!--[if gte mso 9]>
+  <style>
+    sup { font-size: 100% !important; }
+  </style> 
+<![endif]-->
+
+<!--[if mso]>
+<style type=”text/css”>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+h1 {font-weight: 300;}
+.fallback-text {
+font-family: 'Roboto', Helvetica, Arial, sans-serif;
+text-align: center;
+}
+body, p, h1, h2, table, td, a {
+font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+.section-content {
+padding: 0 40x;
+margin-bottom: 10px;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0; 
+}
+.ExternalClass {line-height: 100%; font-family: 'Roboto', Helvetica, Arial, sans-serif;}
+@media screen and (max-width: 480px){
+h1 {
+	font-size: 36px !important;  
+	font-weight: 400;
+	line-height: 100%;
+	margin-top: 10px;
+}
+}
+</style>
+<![endif]-->	
+</head>
+
+<body class="">
+	<!--preheader-->
+	<div style="display:none; font-size:1px; color:#333333; line-height:1px; max-height:0px; max-width:0px; opacity:0; overflow:hidden;">Save 15% on our Mirrored Cabinets!&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+	</div>
+<table align="center" border="0" cellpadding="0" cellspacing="0" id="" style="width:100%; font-size:100%;border-collapse: collapse;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background-color: #ffffff; border-collapse: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; " role="presentation">
+  <!--<tbody>-->
+    <tr>
+      <td align="center" id="bodyCell" style="border-collapse: collapse;-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0;" valign="top">		 
+        <table width="600" align="center" border="0" cellpadding="0" cellspacing="0" class="headerContent" id="templateContainer" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important; " role="presentation">
+			  <!--banner-->
+            <tr >
+              	<td align="center" bgcolor="#343741" style="background-color: #343741; " valign="top">
+				  <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" id="templateBody" style="color: #ffffff; font-family: 'Roboto', Helvetica, Arial, sans-serif; font-size: 12px; text-align: left;" role="presentation">
+                    <tr >
+					  <td ></td>	
+                      <td align="center" class="headerImage" style="padding: 10px 0 0;" valign="top">
+						  <a href="https://www.electricmirror.com/" id="logo" style="text-decoration: none;text-align:center;">
+							  <img class="fade-slow" alt="Electric Mirror logo" border="0" width="273" src="https://www.electricmirror.com/wp-content/uploads/2019/01/header-logo-sm.png" style="width: 100%; height: auto; display: block; background-color: #343741; color: #ffffff; font-size: 16px; font-family: 'Roboto', Helvetica, Arial, sans-serif;">
+						  </a>
+					  </td>
+					  <td ></td>	
+					</tr>
+					<tr>					
+					  <td width="30%" align="center" class="headerContent fallback-text" style="padding:10px 0;font-family: 'Roboto', Helvetica, Arial, sans-serif;" valign="top"><a href="https://www.electricmirror.com/product-category/led-lighted-mirrors/residential-lighted-mirrors/" class="header-link link" style="color:#ffffff"><strong style="color:#ffffff; font-weight: 300;">Lighted Mirrors</strong></a></td>
+					  <td width="30%" align="center" class="headerContent fallback-text" style="padding:10px 0;font-family: 'Roboto', Helvetica, Arial, sans-serif;" valign="top"><a href="https://www.electricmirror.com/product-category/mirrored-cabinets/" class="header-link link" style="color:#ffffff"><strong style="color:#ffffff; font-weight: 300;">Mirrored Cabinets</strong></a></td>
+					  <td width="30%" align="center" class="headerContent fallback-text" style="padding:10px 0;font-family: 'Roboto', Helvetica, Arial, sans-serif;" valign="top"><a href="https://www.electricmirror.com/residential-showrooms/" class="header-link link" style="color:#ffffff"><strong style="color:#ffffff; font-weight: 300;">Residential Showrooms</strong></a></td>								
+					</tr>
+					</table>
+				</td>
+			  </tr>					
+		<!--first section-->	
+		<tr bgcolor="#535762" class="border1 " style="background-color: 535762;">
+			<td bgcolor="#535762" style="text-align:left; font-family: 'Roboto', Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 300; color: #ffffff; padding: 0 50px; text-align:center;" class="fallback-text"><h1>Save 15&#37; on Mirrored Cabinets for your holiday gift offering.</h1></td>
+		</tr>	
+		<tr bgcolor="#535762" class="border1" style="background-color: #535762; text-align: left;">
+			<td class="fallback-text" style="padding: 0 65px; font-size: 15px;font-family: 'Roboto', Helvetica, Arial, sans-serif;"><p class="fallback-text" style="font-family: 'Roboto', Helvetica, Arial, sans-serif; color:#ffffff; ">You&#8217;ll be merry when you save 15&#37;, and your customers&#8217; bathrooms will be bright with the beautiful glow of our lighted mirrored cabinets. These under&#8211;the&#8211;tree favorites include more bells and whistles than Santa&#8217;s sleigh:</p></td>
+		</tr>
+		<tr bgcolor="#535762" class="border1" style="background-color: #535762; text-align: left;">
+			<td class="fallback-text" style="padding: 0 65px; font-weight:100;font-size: 15px;font-family: 'Roboto', Helvetica, Arial, sans-serif;">
+				<ul class="fallback-text" style="font-family: 'Roboto', Helvetica, Arial, sans-serif; color:#ffffff; ">
+					<li>Forward&#8211;facing task lighting</li>
+					<li>Mirrored interior with top light</li>
+					<li>Integrated defogger</li>
+					<li>Adjustable glass shelves</li>
+					<li>Interior 20 amp. 120 VAC GFCI receptable</li>
+					<li>Two electrical outlets</li>
+					<li>Four USB ports</li>
+				</ul></td>
+		</tr>
+		<tr bgcolor="#535762" class="border1">
+					<td height="70" width="150px" align="center" class="fallback-text " style="background-color: #535762; border-collapse: collapse;"><a href="https://www.electricmirror.com/product/ambiance-mirrored-cabinet/" class="bg-rollover fallback-text" style="padding: 11px 15px; border: 1px solid #ffffff; font-family: 'Roboto', Arial, Helvetica, sans-serif; font-size:12px; color:#000000; font-weight: 100; text-decoration:none; text-transform: uppercase; background: #535762;"><strong style="color:#ffffff; font-weight: 300;">Ambiance Mirrored Cabinet</strong></a></td>
+				</tr>	
+		<tr class="" style="background-color: #535762;">
+			<td align="center" style="border-collapse: collapse;"><img style="width: 100%; height: auto; display: block; margin-top: -1px; background-color: #535762; color: #ffffff; font-size: 10px; font-family: 'Roboto', Helvetica, Arial, sans-serif; text-align:center;" alt="Ambiance Mirrored Cabinets from Electric Mirror are 15% off for the holidays" border="0" src="https://www.electricmirror.com/email-images/Ambiance2.jpg"  width="600" ></td>
+		</tr>                   
+		<!--second section-->	
+		<tr bgcolor="#b2ada5" class="border2 " style="background-color: b2ada5;">
+			<td bgcolor="#b2ada5" style="text-align:left; font-family: 'Roboto', Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 300; color: #000000; padding: 0 50px; text-align:center;" class="fallback-text"><h1>Hurry, order by December 31!</h1></td>
+		</tr>	
+		<tr bgcolor="#b2ada5" class="border2" style="background-color: #b2ada5; text-align: left;">
+			<td class="fallback-text" style="padding: 0 65px; font-size: 15px;font-family: 'Roboto', Helvetica, Arial, sans-serif;"><p class="fallback-text" style="font-family: 'Roboto', Helvetica, Arial, sans-serif; color:#000000; ">Include promo code EMCAB19 on your purchase order to receive the 15&#37; discount, available on any Ambiance&#8482; or Ascension&#8482; mirrored cabinet purchased 12/5/19 through 12/31/19. This 15&#37; discount applies to residential dealer retail pricing only.</p></td>
+		</tr>
+
+		<tr bgcolor="#b2ada5" class="border2">
+					<td height="70" width="150px" align="center" class="fallback-text " style="background-color: #b2ada5; border-collapse: collapse;"><a href="https://www.electricmirror.com/product/ascension-mirrored-cabinet/" class="bg-rollover fallback-text" style="padding: 11px 15px; border: 1px solid #000000; font-family: 'Roboto', Arial, Helvetica, sans-serif; font-size:12px; color:#000000; font-weight: 100; text-decoration:none; background: #b2ada5;"><strong style="color:#000000; font-weight: 300;">ASCENSION MIRRORED CABINET</strong></a></td>
+				</tr>	
+		<tr class="" style="background-color: #b2ada5;">
+			<td align="center" style="border-collapse: collapse;"><img style="width: 100%; height: auto; display: block; margin-top: -1px; background-color: #b2ada5; color: #000000; font-size: 10px; font-family: 'Roboto', Helvetica, Arial, sans-serif; text-align:center;" alt="Ascension Mirrored Cabinets from Electric Mirror are 15% off for the holidays" border="0" src="https://www.electricmirror.com/email-images/Ascension.jpg"  width="600" ></td>
+		</tr>                   
+					
+			<!--end main content-->			  
+			<!-- start footer-->
+        <tr><!-- social row-->
+		  <td align="center" style="" valign="top">
+			  <table border="0" cellpadding="20" cellspacing="0" id="" style="font-family: 'Roboto', Helvetica, Arial, sans-serif;" width="600" role="presentation">
+				  <tr>
+					<td align="center" style="padding-bottom: 0; border-bottom:1px solid #ddd" valign="top">
+						<table align="center" border="0" cellpadding="0" cellspacing="0" class="templateColumnContainer" style="" role="presentation"> 	<tr>
+							  <td align="center" class="leftColumnContent" style="padding: 0 0 20px;"><a href="https://www.instagram.com/electricmirror/" rel="noopener noreferrer" style="" target="_blank"><img alt="Instagram" border="0" height="50" src="http://campaign-image.com/zohocampaigns/6_zc_v6_479224000000220010.jpg" style="width: 100%; height: auto; display: block; color: #343741; font-size: 10px; font-family: 'Roboto', Helvetica, Arial, sans-serif;" width="50"></a></td>
+							  <td align="center" class="leftColumnContent" style="text-align: center;                         padding: 0 0 20px;"><a href="https://www.facebook.com/electricmirror" style=""><img alt="Facebook" border="0" class="columnImage" height="50" src="http://campaign-image.com/zohocampaigns/1_zc_v6_479224000000220010.jpg" style="width: 100%; height: auto; display: block; color: #343741; font-size: 10px; font-family: 'Roboto', Helvetica, Arial, sans-serif;" width="50"></a></td>
+							  <td align="center" class="leftColumnContent" style="padding: 0 0 20px;"><a href="https://www.pinterest.com/electricmirror/" style=""><img alt="Pinterest" border="0" class="columnImage" height="50" src="http://campaign-image.com/zohocampaigns/5_zc_v6_479224000000220010.jpg" style="width: 100%; height: auto; display: block; color: #343741; font-size: 10px; font-family: 'Roboto', Helvetica, Arial,  sans-serif;" width="50"></a></td>
+							  <td align="center" class="leftColumnContent" style="padding: 0 0 20px;"><a href="https://twitter.com/electricmirror" style=""><img alt="Twitter" border="0" class="columnImage" height="50" src="http://campaign-image.com/zohocampaigns/2_zc_v6_479224000000220010.jpg" style="width: 100%; height: auto; display: block; color: #343741; font-size: 10px; font-family: 'Roboto', Helvetica, Arial, sans-serif;" width="50"></a></td>
+							  <td align="center" class="leftColumnContent" style="padding: 0 0 20px;"><a href="http://www.houzz.com/pro/electricmirrorusa/__public" style=""><img alt="Houzz" border="0" class="columnImage" height="50" src="http://campaign-image.com/zohocampaigns/2019_new_houzz_logo_zc_v10_479224000004546004.png" style="width: 100%; height: auto; display: block; color: #343741; font-size: 10px; font-family: 'Roboto', Helvetica, Arial, sans-serif;" width="50"></a></td>
+							  <td align="center" class="leftColumnContent" style="padding: 0 0 20px;"><a href="https://www.linkedin.com/company/electric-mirror-llc" style=""><img alt="LinkedIn" border="0" class="columnImage" height="50" src="http://campaign-image.com/zohocampaigns/4_zc_v6_479224000000220010.jpg" style="width: 100%; height: auto; display: block; color: #343741; font-size: 10px; font-family: 'Roboto', Helvetica, Arial, sans-serif;" width="50"></a></td>                                 
+							</tr>
+
+						</table>
+					  </td>
+				  </tr>					  
+			  </table>
+			</td>
+            </tr>
+            <tr>
+              <td align="center" style="" valign="top">
+				  <table border="0" cellpadding="0" cellspacing="0" width="600" align="center" style="" role="presentation">
+                    <tr style="line-height: 115% !important;font-size: 14px !important; border-collapse: collapse;font-family: 'Roboto', Helvetica, Arial, sans-serif; line-height: 15px; text-align: left; padding: 5px 10px 0px;color: #e35205;border: 0px;  font-weight: normal;" >					
+                      <td align="center" class="footerContent" style="" valign="top">
+                        <br>
+                        <a href="https://www.electricmirror.com/contact-us/" class="link" style="color:#e35205;"  rel="noopener noreferrer" target="_blank"><strong style="color:#e35205; font-weight: 300;">Contact Us</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					    <a class="link" style="color:#e35205;" href="https://www.electricmirror.com/privacy-policy/" rel="noopener noreferrer" target="_blank"><strong style="color:#e35205; font-weight: 300;">Privacy Policy</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					    <a class="link" style="color:#e35205;" href="https://www.electricmirror.com/faq/" rel="noopener noreferrer" target="_blank"><strong style="color:#e35205; font-weight: 300;">FAQs</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a class="link" style="color:#e35205;" href="https://www.electricmirror.com" rel="noopener noreferrer" target="_blank"><strong style="color:#e35205; font-weight: 300;">About Us</strong></a>
+					  </td>
+                    </tr>
+					<tr>
+						<td align="center" class="footerContent" style="color: #343741; font-family: 'Roboto', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 300; text-align: center; padding: 0px 20px 10px;" valign="top"><p class="org-link appleLinks" style="color: #343741; text-decoration: none;">Don't miss out on future information and offers from Electric Mirror. Add us to your address book!</p></td>
+					</tr>  
+					<tr>
+						<td align="center" class="footerContent" style="color: #343741; font-family: 'Roboto', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 300; text-align: center; padding: 0px 20px 10px;" valign="top"><p><a href="$[HF:ORGINFO]$" class="org-link appleLinks" style="color: #343741; text-decoration: none;">$[HF:ORGINFO]$</a></p></td>
+					</tr>   
+                    <tr>
+                      <td align="center" class="footerContent fallback-text" style="color: #343741; font-family: 'Roboto', Helvetica, Arial, sans-serif; font-size: 10px; text-align: center; padding: 0px 20px 5px;" valign="top"><p>You have received this mail because you have subscribed for a newsletter at <a class="footer-link" href="https://www.electricmirror.com/" style="color: #343741"><strong style="color: #343741; font-weight: 300;">Electric Mirror</strong></a> or because your email address is on our subscribers list. If you are not interested in receiving more emails like this one, just click <a class="footer-link" href="http://$[LI:UNSUBSCRIBE]$" style="color: #343741 !important;" target="_blank" ><strong style="color: #343741; font-weight: 300;">unsubscribe</strong></a>. You can also <a class="footer-link" href="$[LI:SUB_PREF]$" style="color: #343741 !important;" target="_blank" ><strong style="color: #343741; font-weight: 300;">update your preferences</strong></a>. View in your <a class="footer-link" href="$[LI:VIEWINBROWSER]$" style="color: #343741 !important;"><strong style="color: #343741; font-weight: 300;">browser</strong>.</a> Copyright © 2019. All rights reserved.</p>	
+						</td>
+                    </tr>
+                </table>
+				</td>
+            </tr>
+	</table>
+	</td>
+</tr>
+</table>
+</body>
+</html>
+
+
